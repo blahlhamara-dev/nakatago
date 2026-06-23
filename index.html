@@ -68,13 +68,12 @@
         .bot-node { cursor: default !important; }
         .bot-node:hover { transform: none !important; }
 
-        /* Style specifically for non-clickable members marquee nodes */
         .member-static-node {
             cursor: default !important;
-            pointer-events: none; /* Disables all hover tooltips and interactions */
+            pointer-events: none;
         }
         .member-static-node:hover {
-            transform: none !important; /* Prevents lifting effect on hover */
+            transform: none !important;
         }
 
         .discord-tooltip {
@@ -113,9 +112,10 @@
         .avatar-wrap img:not(.decoration-img) { width: 65px; height: 65px; border-radius: 50%; border: 3px solid var(--status-offline); position: relative; z-index: 1; object-fit: cover; }
         .decoration-img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 125%; height: 125%; pointer-events: none; z-index: 2; }
 
-        #splash { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, transform 0.8s ease; }
+        #splash { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, transform 0.8s ease; cursor: pointer; }
         #splash.hidden { opacity: 0; pointer-events: none; transform: scale(1.1); }
         .enter-text { font-size: clamp(1.5rem, 5vw, 3rem); background: linear-gradient(90deg, #fff, var(--neon-blue), #fff); background-size: 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 3s infinite linear; cursor: pointer; }
+        @keyframes shine { to { background-position: 200% center; } }
 
         nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.6); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 20px 0; display: flex; justify-content: center; gap: 30px; }
         nav a { color: #aaa; text-decoration: none; font-size: 0.8rem; transition: 0.4s; }
@@ -257,7 +257,7 @@
             <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-pink);">[ FOUNDER ]</h2>
             <div style="display: flex; justify-content: center;">
                 <div class="user-node founder-node" data-discordid="1497306715715010620">
-                    <div class="avatar-wrap"><img src=""></div>
+                    <div class="avatar-wrap"><img src="https://cdn.discordapp.com/attachments/1504443667493158942/1518799139192701049/inst__eva_photaet.jpg" alt="Avatar"></div>
                     <h3>BLAH</h3>
                     <p style="color: var(--neon-pink); font-size: 0.7rem; font-weight: bold;">FOUNDER</p>
                     <div class="node-activities-list"></div>
@@ -275,7 +275,6 @@
                 <div class="user-node" data-discordid="1505646697290924103"><div class="avatar-wrap"><img src=""></div><h3>JEREMY</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">HANDLER</p><div class="node-activities-list"></div></div>
                 <div class="user-node" data-discordid="1489962785839386755"><div class="avatar-wrap"><img src=""></div><h3>MOOZIE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">1OF1</p><div class="node-activities-list"></div></div>
                 <div class="user-node" data-discordid="1414171167883001876"><div class="avatar-wrap"><img src=""></div><h3>PRINCE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">HANDLER</p><div class="node-activities-list"></div></div>
-
             </div>
         </section>
 
@@ -283,10 +282,8 @@
 
         <section id="members">
             <h2 style="text-align:center; margin-bottom: 40px; font-size: 0.9rem; color: var(--neon-yellow);">[ MEMBERS ]</h2>
-            
             <div class="member-marquee-container">
                 <div class="member-track track-left" id="memberTrack1"></div>
-                
                 <div class="member-track track-right" id="memberTrack2"></div>
             </div>
         </section>
@@ -295,11 +292,71 @@
             <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-pink);">[ SECURITY ]</h2>
             <div class="grid-container" style="max-width: 400px; margin: 0 auto 40px;">
                 <div class="user-node bot-node" data-discordid="1494022976058691880">
-                    <div class="avatar-wrap"><img src="bot.jpg"></div>
+                    <div class="avatar-wrap"><img src="bot.jpg" alt="Bot Avatar"></div>
                     <h3>LhamaraX</h3>
                     <p style="color: var(--neon-pink); font-size: 0.65rem; letter-spacing: 2px;">Anti-Raid</p>
                     <div class="node-activities-list"></div>
                     <div class="bot-scopes">
                         <span class="bot-scope-tag">MOD</span>
                         <span class="bot-scope-tag">SECURITY</span>
-                        <spa
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="SECURITY" style="padding: 20px;"></section>
+        <section id="allies" style="padding: 20px;"></section>
+    </main>
+
+    <!-- 🎵 MUSIC PLAYER -->
+    <div class="music-widget">
+        <button id="m-toggle" style="background:none; border:none; color:white; cursor:pointer;">
+            <svg id="play-icon" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            <svg id="pause-icon" viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <div class="m-info">
+            <span>Music</span><br>
+            <span style="font-size:0.6rem; color:#888;">Background</span>
+        </div>
+        <input type="range" id="v-slider" min="0" max="1" step="0.01" value="0.2">
+        <audio id="bg-audio" loop>
+            <source src="YOUR_MUSIC_FILE.mp3" type="audio/mpeg">
+        
+    </div>
+
+    <script>
+        // ✅ SPLASH SCREEN CLICK TO ENTER
+        const splash = document.getElementById('splash');
+        splash.addEventListener('click', () => {
+            splash.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // ✅ MUSIC PLAYER FUNCTION
+        const audio = document.getElementById('bg-audio');
+        const toggleBtn = document.getElementById('m-toggle');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+        const volumeSlider = document.getElementById('v-slider');
+
+        audio.volume = volumeSlider.value;
+
+        toggleBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play().catch(e => console.log("Auto-play blocked:", e));
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'inline';
+            } else {
+                audio.pause();
+                playIcon.style.display = 'inline';
+                pauseIcon.style.display = 'none';
+            }
+        });
+
+        volumeSlider.addEventListener('input', () => {
+            audio.volume = volumeSlider.value;
+        });
+    </script>
+
+</body>
+</html>
