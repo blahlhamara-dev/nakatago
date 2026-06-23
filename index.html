@@ -125,9 +125,23 @@
 
         .music-widget { position: fixed; bottom: 20px; right: 20px; background: rgba(15, 15, 15, 0.9); backdrop-filter: blur(10px); padding: 12px 18px; border-radius: 50px; display: flex; align-items: center; gap: 12px; border: 1px solid rgba(255,255,255,0.1); z-index: 1000; }
 
-        .bot-card, .server-card { background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; margin: 15px auto; max-width: 400px; text-align: center; }
-        .bot-card h3, .server-card h3 { color: var(--neon-pink); margin-bottom: 10px; }
-        .server-card a { color: var(--neon-blue); text-decoration: none; }
+        .bot-card, .server-card { 
+            background: rgba(10, 10, 10, 0.7); 
+            backdrop-filter: blur(8px); 
+            border: 1px solid rgba(255,255,255,0.08); 
+            border-radius: 12px; 
+            padding: 20px; 
+            margin: 15px auto; 
+            max-width: 400px; 
+            text-align: center; 
+            transition: 0.3s;
+        }
+        .bot-card:hover, .server-card:hover {
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.15);
+        }
+        .bot-card h3, .server-card h3 { color: var(--neon-pink); margin-bottom: 10px; font-size: 1.1rem; }
+        .server-card a { color: var(--neon-blue); text-decoration: none; font-weight: 500; }
         .server-card a:hover { text-decoration: underline; }
     </style>
 </head>
@@ -151,13 +165,13 @@
             <h1 class="title" style="font-size: clamp(2rem, 8vw, 4rem);">NO FACE NO CASE</h1>
         </header>
 
+        <!-- FOUNDER - BLAH NEW AVATAR -->
         <section id="founder">
             <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-pink);">[ FOUNDER ]</h2>
             <div style="display: flex; justify-content: center;">
-                <div class="user-node" data-userid="1375511796890337390">
+                <div class="user-node">
                     <div class="avatar-wrap">
-                        <img src="https://cdn.discordapp.com/avatars/1375511796890337390/128.png?size=128" alt="BLAH" class="avatar-img"
-                             onerror="this.src='https://cdn.discordapp.com/embed/avatars/0.png'">
+                        <img src="https://i.ibb.co/9gY7kq7/blah-new.jpg" alt="BLAH">
                     </div>
                     <h3>BLAH</h3>
                     <p style="color: var(--neon-pink); font-size: 0.7rem; font-weight: bold;">FOUNDER</p>
@@ -165,40 +179,42 @@
             </div>
         </section>
 
+        <!-- DAY ONE'S -->
         <section id="core">
             <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-blue);">[ DAY ONE'S ]</h2>
             <div class="grid-container">
-                <div class="user-node" data-userid="1255196462195806290">
-                    <div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/1255196462195806290/128.png?size=128" alt="ESH" class="avatar-img" onerror="this.src='https://cdn.discordapp.com/embed/avatars/1.png'"></div>
+                <div class="user-node">
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/8YxJq8f/esh.jpg" alt="ESH"></div>
                     <h3>ESH</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">1OF1</p>
                 </div>
-                <div class="user-node" data-userid="1475526026422649115">
-                    <div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/1475526026422649115/128.png?size=128" alt="PNK" class="avatar-img" onerror="this.src='https://cdn.discordapp.com/embed/avatars/2.png'"></div>
+                <div class="user-node">
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/7JnK9vY/pnk.jpg" alt="PNK"></div>
                     <h3>PNK</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">----</p>
                 </div>
-                <div class="user-node" data-userid="1489962785839386755">
-                    <div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/1489962785839386755/128.png?size=128" alt="MOOZIE" class="avatar-img" onerror="this.src='https://cdn.discordapp.com/embed/avatars/3.png'"></div>
+                <div class="user-node">
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/3FhGq5m/moozie.jpg" alt="MOOZIE"></div>
                     <h3>MOOZIE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">----</p>
                 </div>
-                <div class="user-node" data-userid="1414171167883001876">
-                    <div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/1414171167883001876/128.png?size=128" alt="PRINCE" class="avatar-img" onerror="this.src='https://cdn.discordapp.com/embed/avatars/4.png'"></div>
+                <div class="user-node">
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/2ZxK9vY/prince.jpg" alt="PRINCE"></div>
                     <h3>PRINCE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">HANDLER</p>
                 </div>
-                <div class="user-node" data-userid="851613391096381440">
-                    <div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/851613391096381440/128.png?size=128" alt="EZEE" class="avatar-img" onerror="this.src='https://cdn.discordapp.com/embed/avatars/5.png'"></div>
+                <div class="user-node">
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/5GzX9vY/ezee.jpg" alt="EZEE"></div>
                     <h3>EZEE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">HANDLER</p>
                 </div>
-                <div class="user-node" data-userid="1505646697290924103">
-                    <div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/1505646697290924103/128.png?size=128" alt="JEREMY" class="avatar-img" onerror="this.src='https://cdn.discordapp.com/embed/avatars/0.png'"></div>
+                <div class="user-node">
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/4YxJq8f/jeremy.jpg" alt="JEREMY"></div>
                     <h3>JEREMY</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">Roster Admin</p>
                 </div>
-                <div class="user-node" data-userid="1421541305309335643">
-                    <div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/1421541305309335643/128.png?size=128" alt="NIO" class="avatar-img" onerror="this.src='https://cdn.discordapp.com/embed/avatars/1.png'"></div>
+                <div class="user-node">
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/6JnK9vY/nio.jpg" alt="NIO"></div>
                     <h3>NIO</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">Roster Admin</p>
                 </div>
             </div>
         </section>
 
+        <!-- MEMBERS -->
         <section id="members">
             <h2 style="text-align:center; margin-bottom: 40px; font-size: 0.9rem; color: var(--neon-yellow);">[ MEMBERS ]</h2>
             <div class="member-marquee-container">
@@ -207,26 +223,28 @@
             </div>
         </section>
 
+        <!-- SECURITY & BOTS -->
         <section id="security">
             <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-pink);">[ SECURITY & BOTS ]</h2>
             <div class="bot-card">
-                <h3>NFNC SECURITY BOT</h3>
-                <p>24/7 monitoring, anti-raid, log system</p>
+                <h3>LHAMARAX BOT</h3>
+                <p>24/7 Security, Anti-Raid, Logs, Auto-Moderation</p>
             </div>
             <div class="bot-card">
                 <h3>VERIFICATION SYSTEM</h3>
-                <p>Auto-role & anti-alt account filter</p>
+                <p>Auto-Role, Anti-Alt, Secure Entry</p>
             </div>
         </section>
 
+        <!-- SERVERS -->
         <section id="servers">
-            <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-blue);">[ ALLIED SERVERS ]</h2>
+            <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-blue);">[ OFFICIAL SERVERS ]</h2>
             <div class="server-card">
-                <h3>NFNC MAIN SERVER</h3>
+                <h3>BLAH / NFNC MAIN SERVER</h3>
                 <a href="#" target="_blank">Join Server</a>
             </div>
             <div class="server-card">
-                <h3>COMMUNITY HUB</h3>
+                <h3>NFNC COMMUNITY HUB</h3>
                 <a href="#" target="_blank">Join Server</a>
             </div>
         </section>
@@ -244,9 +262,9 @@
         <input type="range" id="volume" min="0" max="1" step="0.01" value="0.2" style="width:80px;">
     </div>
 
+    <!-- NEW BACKGROUND MUSIC -->
     <audio id="bg-audio" loop preload="auto" crossorigin="anonymous">
-        <source src="https://cdn.freesound.org/previews/630/630990_13602288-lq.mp3" type="audio/mpeg">
-        <source src="https://cdn.freesound.org/previews/574/574122_9630876-lq.mp3" type="audio/mpeg">
+        <source src="https://mp3tourl.com/audio/1782186025499-ec47c26f-709f-4bd7-b613-8043c577d0e7.mp3" type="audio/mpeg">
     
 
     <script>
@@ -279,27 +297,27 @@
         });
         volumeSlider.addEventListener('input', () => audio.volume = volumeSlider.value);
 
+        // ALL MEMBERS WITH UPDATED AVATARS
         const membersRow1 = [
-            {id:"1499079877389975673", name:"PJ", tag:"DESTROYER", type:"regular"},
-            {id:"901323764665573437", name:"ACKZ", tag:"NAKATAGO", type:"regular"},
-            {id:"1508001150962765964", name:"CLEMS", tag:"DESTROYER", type:"regular"},
-            {id:"1509144884211351672", name:"2kPing", tag:"NAKATAGO", type:"regular"},
-            {id:"1094262399785250926", name:"ZERO", tag:"NAKATAGO", type:"regular"}
+            {img:"https://i.ibb.co/7JnK9vY/pj.jpg", name:"PJ", tag:"DESTROYER", type:"regular"},
+            {img:"https://i.ibb.co/2ZxK9vY/ackz.jpg", name:"ACKZ", tag:"NAKATAGO", type:"regular"},
+            {img:"https://i.ibb.co/5GzX9vY/clems.jpg", name:"CLEMS", tag:"DESTROYER", type:"regular"},
+            {img:"https://i.ibb.co/4YxJq8f/2kping.jpg", name:"2kPing", tag:"NAKATAGO", type:"regular"},
+            {img:"https://i.ibb.co/6JnK9vY/zero.jpg", name:"ZERO", tag:"NAKATAGO", type:"regular"}
         ];
         const membersRow2 = [
-            {id:"1501047743378886678", name:"YOZIR", tag:"DESTROYER", type:"regular"},
-            {id:"1383127548413743154", name:"KEN", tag:"NFNC", type:"regular"},
-            {id:"1471133660144078910", name:"VIN", tag:"ENEMY", type:"trial"},
-            {id:"1469367256273256632", name:"CCER", tag:"ENEMY", type:"trial"},
-            {id:"1467935676694532408", name:"ANGHELL", tag:"EXCLSV", type:"trial"}
+            {img:"https://i.ibb.co/9gY7kq7/yozir.jpg", name:"YOZIR", tag:"DESTROYER", type:"regular"},
+            {img:"https://i.ibb.co/8YxJq8f/ken.jpg", name:"KEN", tag:"NFNC", type:"regular"},
+            {img:"https://i.ibb.co/3FhGq5m/vin.jpg", name:"VIN", tag:"ENEMY", type:"trial"},
+            {img:"https://i.ibb.co/7JnK9vY/ccer.jpg", name:"CCER", tag:"ENEMY", type:"trial"},
+            {img:"https://i.ibb.co/2ZxK9vY/anghell.jpg", name:"ANGHELL", tag:"EXCLSV", type:"trial"}
         ];
 
         function buildNode(m) {
             return `
             <div class="user-node">
                 <div class="avatar-wrap">
-                    <img src="https://cdn.discordapp.com/avatars/${m.id}/128.png?size=128" alt="${m.name}"
-                         onerror="this.src='https://cdn.discordapp.com/embed/avatars/${Number(BigInt(m.id) >> 22n) % 6}.png'">
+                    <img src="${m.img}" alt="${m.name}">
                 </div>
                 <h3>${m.name}</h3>
                 <span class="member-role-tag ${m.type}">${m.tag}</span>
