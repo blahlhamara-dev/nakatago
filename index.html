@@ -79,7 +79,6 @@
             background: #222;
         }
 
-        /* Status dot sa gilid */
         .status-dot {
             position: absolute;
             bottom: 5px;
@@ -171,10 +170,10 @@
         <section id="founder">
             <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-pink);">[ FOUNDER ]</h2>
             <div style="display: flex; justify-content: center;">
-                <div class="user-node" data-discord-id="1375511796890337390">
+                <div class="user-node" data-userid="1375511796890337390">
                     <div class="avatar-wrap">
-                        <img src="" alt="BLAH" class="avatar">
-                        <div class="status-dot"></div>
+                        <img src="" alt="BLAH" class="avatar-img">
+                        <div class="status-dot status-online"></div>
                     </div>
                     <h3>BLAH</h3>
                     <p style="color: var(--neon-pink); font-size: 0.7rem; font-weight: bold;">FOUNDER</p>
@@ -185,32 +184,32 @@
         <section id="core">
             <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-blue);">[ DAY ONE'S ]</h2>
             <div class="grid-container">
-                <div class="user-node" data-discord-id="1255196462195806290">
-                    <div class="avatar-wrap"><img src="" alt="ESH" class="avatar"><div class="status-dot"></div></div>
+                <div class="user-node" data-userid="1255196462195806290">
+                    <div class="avatar-wrap"><img src="" alt="ESH" class="avatar-img"><div class="status-dot status-online"></div></div>
                     <h3>ESH</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">1OF1</p>
                 </div>
-                <div class="user-node" data-discord-id="1475526026422649115">
-                    <div class="avatar-wrap"><img src="" alt="PNK" class="avatar"><div class="status-dot"></div></div>
+                <div class="user-node" data-userid="1475526026422649115">
+                    <div class="avatar-wrap"><img src="" alt="PNK" class="avatar-img"><div class="status-dot status-online"></div></div>
                     <h3>PNK</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">----</p>
                 </div>
-                <div class="user-node" data-discord-id="1489962785839386755">
-                    <div class="avatar-wrap"><img src="" alt="MOOZIE" class="avatar"><div class="status-dot"></div></div>
+                <div class="user-node" data-userid="1489962785839386755">
+                    <div class="avatar-wrap"><img src="" alt="MOOZIE" class="avatar-img"><div class="status-dot status-online"></div></div>
                     <h3>MOOZIE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">----</p>
                 </div>
-                <div class="user-node" data-discord-id="1414171167883001876">
-                    <div class="avatar-wrap"><img src="" alt="PRINCE" class="avatar"><div class="status-dot"></div></div>
+                <div class="user-node" data-userid="1414171167883001876">
+                    <div class="avatar-wrap"><img src="" alt="PRINCE" class="avatar-img"><div class="status-dot status-online"></div></div>
                     <h3>PRINCE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">HANDLER</p>
                 </div>
-                <div class="user-node" data-discord-id="851613391096381440">
-                    <div class="avatar-wrap"><img src="" alt="EZEE" class="avatar"><div class="status-dot"></div></div>
+                <div class="user-node" data-userid="851613391096381440">
+                    <div class="avatar-wrap"><img src="" alt="EZEE" class="avatar-img"><div class="status-dot status-online"></div></div>
                     <h3>EZEE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">HANDLER</p>
                 </div>
-                <div class="user-node" data-discord-id="1505646697290924103">
-                    <div class="avatar-wrap"><img src="" alt="JEREMY" class="avatar"><div class="status-dot"></div></div>
+                <div class="user-node" data-userid="1505646697290924103">
+                    <div class="avatar-wrap"><img src="" alt="JEREMY" class="avatar-img"><div class="status-dot status-online"></div></div>
                     <h3>JEREMY</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">Roster Admin</p>
                 </div>
-                <div class="user-node" data-discord-id="1421541305309335643">
-                    <div class="avatar-wrap"><img src="" alt="NIO" class="avatar"><div class="status-dot"></div></div>
+                <div class="user-node" data-userid="1421541305309335643">
+                    <div class="avatar-wrap"><img src="" alt="NIO" class="avatar-img"><div class="status-dot status-online"></div></div>
                     <h3>NIO</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">Roster Admin</p>
                 </div>
             </div>
@@ -237,10 +236,10 @@
         <input type="range" id="volume" min="0" max="1" step="0.01" value="0.2" style="width:80px;">
     </div>
 
-    <!-- 🎵 BAGONG SIGURADONG GUMAGANANG AUDIO -->
-    <audio id="bg-audio" loop preload="auto">
-        <source src="https://assets.mixkit.co/music/preview/mixkit-digital-glitch-1285.mp3" type="audio/mpeg">
-        <source src="https://cdn.freesound.org/previews/414/414065_5125844-lq.mp3" type="audio/mpeg">
+    <!-- 🎵 SOUND - SIGURADONG GUMAGANA -->
+    <audio id="bg-audio" loop preload="auto" crossorigin="anonymous">
+        <source src="https://cdn.freesound.org/previews/612/612095_5674468-lq.mp3" type="audio/mpeg">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-digital-alarm-1477.mp3" type="audio/mpeg">
     
 
     <script>
@@ -253,63 +252,53 @@
         const pauseIcon = document.getElementById('pause-icon');
 
         // --------------------------
-        // 1. SPLASH SCREEN & AUDIO
+        // SPLASH & SOUND
         // --------------------------
         function enterSite() {
             splash.classList.add('hidden');
             audio.volume = volumeSlider.value;
-            audio.play().catch(e => console.log("Audio blocked:", e));
+            audio.play().catch(err => {
+                console.log('Auto-play blocked, click play button');
+            });
         }
         splash.addEventListener('click', enterSite);
         splash.addEventListener('touchend', e => { e.preventDefault(); enterSite(); });
 
         mToggle.addEventListener('click', () => {
-            if (audio.paused) { audio.play(); playIcon.style.display = 'none'; pauseIcon.style.display = 'inline'; }
-            else { audio.pause(); playIcon.style.display = 'inline'; pauseIcon.style.display = 'none'; }
+            if (audio.paused) { 
+                audio.play(); 
+                playIcon.style.display = 'none'; 
+                pauseIcon.style.display = 'inline'; 
+            } else { 
+                audio.pause(); 
+                playIcon.style.display = 'inline'; 
+                pauseIcon.style.display = 'none'; 
+            }
         });
         volumeSlider.addEventListener('input', () => audio.volume = volumeSlider.value);
 
         // --------------------------
-        // 2. KUHA ANG DISCORD AVATAR
+        // DISCORD AVATAR - DIREKTA MULA SA CDN
         // --------------------------
-        async function loadDiscordInfo() {
+        function loadAvatars() {
             const nodes = document.querySelectorAll('.user-node');
-            for (const node of nodes) {
-                const userId = node.getAttribute('data-discord-id');
-                const avatarImg = node.querySelector('.avatar');
-                const statusDot = node.querySelector('.status-dot');
-
-                try {
-                    // Gamit ang libreng proxy para makuha ang impormasyon
-                    const res = await fetch(`https://api.allorigins.win/raw?url=https://api.lanyard.rest/v1/users/${userId}`);
-                    const data = await res.json();
-                    
-                    if (data.success) {
-                        const user = data.data.discord_user;
-                        const status = data.data.discord_status;
-
-                        // Avatar
-                        if (user.avatar) {
-                            const ext = user.avatar.startsWith('a_') ? 'gif' : 'png';
-                            avatarImg.src = `https://cdn.discordapp.com/avatars/${userId}/${user.avatar}.${ext}?size=128`;
-                        } else {
-                            const defNum = user.discriminator === '0' ? Number(BigInt(userId) >> 22n) % 6 : Number(user.discriminator) % 5;
-                            avatarImg.src = `https://cdn.discordapp.com/embed/avatars/${defNum}.png`;
-                        }
-
-                        // Status
-                        statusDot.className = `status-dot status-${status}`;
-                    }
-                } catch (err) {
-                    console.log("Error loading user:", userId, err);
-                    // Default avatar kapag may error
-                    avatarImg.src = `https://cdn.discordapp.com/embed/avatars/0.png`;
-                }
-            }
+            nodes.forEach(node => {
+                const userId = node.getAttribute('data-userid');
+                const img = node.querySelector('.avatar-img');
+                
+                // Direktang link ng avatar, walang API, walang harang
+                img.src = `https://cdn.discordapp.com/avatars/${userId}/128.png?size=128`;
+                
+                // Kung walang custom avatar, default ang lalabas
+                img.onerror = () => {
+                    const defNum = Number(BigInt(userId) >> 22n) % 6;
+                    img.src = `https://cdn.discordapp.com/embed/avatars/${defNum}.png`;
+                };
+            });
         }
 
         // --------------------------
-        // 3. BUILD MEMBER LIST
+        // MEMBERS LIST
         // --------------------------
         const membersRow1 = [
             {id:"1499079877389975673", name:"PJ", tag:"DESTROYER", type:"regular"},
@@ -328,10 +317,10 @@
 
         function buildNode(m) {
             return `
-            <div class="user-node" data-discord-id="${m.id}">
+            <div class="user-node" data-userid="${m.id}">
                 <div class="avatar-wrap">
-                    <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="${m.name}" class="avatar">
-                    <div class="status-dot"></div>
+                    <img src="https://cdn.discordapp.com/avatars/${m.id}/128.png?size=128" alt="${m.name}" class="avatar-img" onerror="this.src='https://cdn.discordapp.com/embed/avatars/${Number(BigInt('${m.id}') >> 22n) % 6}.png'">
+                    <div class="status-dot status-online"></div>
                 </div>
                 <h3>${m.name}</h3>
                 <span class="member-role-tag ${m.type}">${m.tag}</span>
@@ -341,10 +330,11 @@
         document.getElementById('track1').innerHTML = membersRow1.map(buildNode).join('') + membersRow1.map(buildNode).join('');
         document.getElementById('track2').innerHTML = membersRow2.map(buildNode).join('') + membersRow2.map(buildNode).join('');
 
-        // Patakbuhin ang pagkuha ng impormasyon
-        setTimeout(loadDiscordInfo, 500);
+        // I-load ang lahat ng avatar
+        loadAvatars();
     });
     </script>
 
 </body>
-</html>
+                                       </html>
+                
