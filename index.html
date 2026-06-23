@@ -68,13 +68,12 @@
         .bot-node { cursor: default !important; }
         .bot-node:hover { transform: none !important; }
 
-        /* Style specifically for non-clickable members marquee nodes */
         .member-static-node {
             cursor: default !important;
-            pointer-events: none; /* Disables all hover tooltips and interactions */
+            pointer-events: none;
         }
         .member-static-node:hover {
-            transform: none !important; /* Prevents lifting effect on hover */
+            transform: none !important;
         }
 
         .discord-tooltip {
@@ -113,9 +112,10 @@
         .avatar-wrap img:not(.decoration-img) { width: 65px; height: 65px; border-radius: 50%; border: 3px solid var(--status-offline); position: relative; z-index: 1; object-fit: cover; }
         .decoration-img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 125%; height: 125%; pointer-events: none; z-index: 2; }
 
-        #splash { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, transform 0.8s ease; }
+        #splash { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, transform 0.8s ease; cursor: pointer; }
         #splash.hidden { opacity: 0; pointer-events: none; transform: scale(1.1); }
         .enter-text { font-size: clamp(1.5rem, 5vw, 3rem); background: linear-gradient(90deg, #fff, var(--neon-blue), #fff); background-size: 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 3s infinite linear; cursor: pointer; }
+        @keyframes shine { to { background-position: 200% center; } }
 
         nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.6); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 20px 0; display: flex; justify-content: center; gap: 30px; }
         nav a { color: #aaa; text-decoration: none; font-size: 0.8rem; transition: 0.4s; }
@@ -244,7 +244,7 @@
         <a href="#founder-nexus">Founder</a>
         <a href="#core">Day One's</a>
         <a href="#members">Members</a>
-        <a href="#SECURITY">SECURITY</a>
+        <a href="#bots">SECURITY</a>
         <a href="#allies">Servers</a>
     </nav>
 
@@ -257,7 +257,7 @@
             <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-pink);">[ FOUNDER ]</h2>
             <div style="display: flex; justify-content: center;">
                 <div class="user-node founder-node" data-discordid="1375511796890337390">
-                    <div class="avatar-wrap"><img src=""></div>
+                    <div class="avatar-wrap"><img src="https://cdn.discordapp.com/attachments/1504443667493158942/1518799139192701049/inst__eva_photaet.jpg" alt="BLAH"></div>
                     <h3>BLAH</h3>
                     <p style="color: var(--neon-pink); font-size: 0.7rem; font-weight: bold;">FOUNDER</p>
                     <div class="node-activities-list"></div>
@@ -268,14 +268,13 @@
         <section id="core">
             <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-blue);">[ DAY ONE'S ]</h2>
             <div class="grid-container">
-                <div class="user-node" data-discordid="1255196462195806290"><div class="avatar-wrap"><img src=""></div><h3>ESH</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">1OF1</p><div class="node-activities-list"></div></div>
-                <div class="user-node" data-discordid="1475526026422649115"><div class="avatar-wrap"><img src=""></div><h3>PNK</h3><p style="color: var(--neon-blue); font-size: 0.65rem;"><-----></p><div class="node-activities-list"></div></div>
-                <div class="user-node" data-discordid="1489962785839386755"><div class="avatar-wrap"><img src=""></div><h3>MOOZIE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;"><-----></p><div class="node-activities-list"></div></div>
-                <div class="user-node" data-discordid="1414171167883001876"><div class="avatar-wrap"><img src=""></div><h3>PRINCE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">HANDLER</p><div class="node-activities-list"></div></div>
-                <div class="user-node" data-discordid="851613391096381440"><div class="avatar-wrap"><img src=""></div><h3>EZEE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">HANDLER</p><div class="node-activities-list"></div></div>
-                <div class="user-node" data-discordid="1505646697290924103"><div class="avatar-wrap"><img src=""></div><h3>JEREMY</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">Roster Admin</p><div class="node-activities-list"></div></div>
-                <div class="user-node" data-discordid="1421541305309335643"><div class="avatar-wrap"><img src=""></div><h3>NIO</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">Roster Admin</p><div class="node-activities-list"></div></div>
-
+                <div class="user-node" data-discordid="1255196462195806290"><div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/1255196462195806290/default.png?size=128" alt="ESH"></div><h3>ESH</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">1OF1</p><div class="node-activities-list"></div></div>
+                <div class="user-node" data-discordid="1475526026422649115"><div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/1475526026422649115/default.png?size=128" alt="PNK"></div><h3>PNK</h3><p style="color: var(--neon-blue); font-size: 0.65rem;"><-----></p><div class="node-activities-list"></div></div>
+                <div class="user-node" data-discordid="1489962785839386755"><div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/1489962785839386755/default.png?size=128" alt="MOOZIE"></div><h3>MOOZIE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;"><-----></p><div class="node-activities-list"></div></div>
+                <div class="user-node" data-discordid="1414171167883001876"><div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/1414171167883001876/default.png?size=128" alt="PRINCE"></div><h3>PRINCE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">HANDLER</p><div class="node-activities-list"></div></div>
+                <div class="user-node" data-discordid="851613391096381440"><div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/851613391096381440/default.png?size=128" alt="EZEE"></div><h3>EZEE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">HANDLER</p><div class="node-activities-list"></div></div>
+                <div class="user-node" data-discordid="1505646697290924103"><div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/1505646697290924103/default.png?size=128" alt="JEREMY"></div><h3>JEREMY</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">Roster Admin</p><div class="node-activities-list"></div></div>
+                <div class="user-node" data-discordid="1421541305309335643"><div class="avatar-wrap"><img src="https://cdn.discordapp.com/avatars/1421541305309335643/default.png?size=128" alt="NIO"></div><h3>NIO</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">Roster Admin</p><div class="node-activities-list"></div></div>
             </div>
         </section>
 
@@ -283,10 +282,8 @@
 
         <section id="members">
             <h2 style="text-align:center; margin-bottom: 40px; font-size: 0.9rem; color: var(--neon-yellow);">[ MEMBERS ]</h2>
-            
             <div class="member-marquee-container">
                 <div class="member-track track-left" id="memberTrack1"></div>
-                
                 <div class="member-track track-right" id="memberTrack2"></div>
             </div>
         </section>
@@ -295,7 +292,7 @@
             <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-pink);">[ SECURITY ]</h2>
             <div class="grid-container" style="max-width: 400px; margin: 0 auto 40px;">
                 <div class="user-node bot-node" data-discordid="1494022976058691880">
-                    <div class="avatar-wrap"><img src="bot.jpg"></div>
+                    <div class="avatar-wrap"><img src="bot.jpg" alt="LhamaraX"></div>
                     <h3>LhamaraX</h3>
                     <p style="color: var(--neon-pink); font-size: 0.65rem; letter-spacing: 2px;">Anti-Raid</p>
                     <div class="node-activities-list"></div>
@@ -308,9 +305,9 @@
             </div>
 
             <div class="bot-card" id="bot-card">
-                <a class="bot-banner-link" href="#" target="_blank"><img src="banner2.gif"></a>
+                <a class="bot-banner-link" href="#" target="_blank"><img src="banner2.gif" alt="Banner"></a>
                 <div class="bot-card-inner">
-                    <img class="bot-avatar" src="bot.jpg" id="bot-avatar-img">
+                    <img class="bot-avatar" src="bot.jpg" id="bot-avatar-img" alt="Bot">
                     <div class="bot-info">
                         <h3>LhamaraX<span class="bot-tag">✓ Verified</span></h3>
                         <p>Moderation, security & utility bot for the Server's ecosystem.</p>
@@ -330,7 +327,7 @@
     <div id="profile-modal">
         <div class="pro-card">
             <span class="modal-close">×</span>
-            <div class="p-avatar-wrap" id="p-wrap"><img src="" class="p-avatar-main" id="m-img"></div>
+            <div class="p-avatar-wrap" id="p-wrap"><img src="" class="p-avatar-main" id="m-img" alt="Profile"></div>
             <h2 id="m-name" style="text-align:center;">User</h2>
             <p class="p-status" id="m-status">Offline</p>
             <div id="m-custom-msg" style="text-align:center; margin: 10px 0; color: #888;"></div>
@@ -348,14 +345,17 @@
         <div class="m-info"><span>Music</span><br><span style="font-size:0.6rem; color:#888;">NOW PLAYING</span></div>
         <input type="range" id="v-slider" min="0" max="1" step="0.01" value="0.2">
     </div>
-    <audio id="bg-audio" loop></audio>
+    <!-- 🎵 BAGONG SOUND LINK -->
+    <audio id="bg-audio" loop preload="auto">
+        <source src="https://mp3tourl.com/audio/1782186025499-ec47c26f-709f-4bd7-b613-8043c577d0e7.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    
 
     <script>
     (function() {
         'use strict';
         const allyServers = [
             { name: "BLAH #ALBTHCKS", invite: "BAJ9UyFwFq ", guildId: "1504217597900755075", icon: "335c5d2498dbf8b0ab834b022710c86a", members: "2,541", status: "540 ONLINE" },
-      
         ];
 
         const userIds = [
@@ -457,55 +457,10 @@
             }
         }
 
-        // Added 'member-static-node' to strip any hover transformations or pointer hints
         function buildMemberNodeString(m) {
             return '<div class="user-node member-static-node" data-discordid="' + m.id + '"><div class="avatar-wrap"><img src=""></div><h3>' + escapeHtml(m.name) + '</h3><span class="member-role-tag ' + m.type + '">' + m.tag + '</span><div class="node-activities-list"></div></div>';
         }
 
         function buildMemberMarquees() {
             var track1 = document.getElementById('memberTrack1');
-            var track2 = document.getElementById('memberTrack2');
-            
-            var line1Html = groupRow1.map(buildMemberNodeString).join('');
-            var line2Html = groupRow2.map(buildMemberNodeString).join('');
-            
-            track1.innerHTML = line1Html + line1Html + line1Html;
-            track2.innerHTML = line2Html + line2Html + line2Html;
-
-            // Removed click listener injection for members section entirely so modal won't trigger
-        }
-
-        function buildAllyCards() {
-            var track = document.getElementById('allyTrack');
-            track.innerHTML = allyServers.concat(allyServers).map(s => '<a class="ally-card" href="https://discord.gg/' + s.invite + '" target="_blank"><div class="ally-icon-wrap"><img src="https://cdn.discordapp.com/icons/' + s.guildId + '/' + s.icon + '.png?size=128"></div><div class="ally-info"><h3 class="ally-name">' + escapeHtml(s.name) + '</h3><div class="ally-stats-small"><span class="status-dot"></span><span>' + s.status + '</span></div></div></a>').join('');
-        }
-
-        function connectLanyard() {
-            var socket = new WebSocket('wss://api.lanyard.rest/socket');
-            socket.onmessage = function(e) {
-                var msg = JSON.parse(e.data);
-                if (msg.op === 1) { socket.send(JSON.stringify({ op: 2, d: { subscribe_to_ids: userIds } })); setInterval(() => socket.send(JSON.stringify({ op: 3 })), msg.d.heartbeat_interval); }
-                if (msg.t === 'INIT_STATE') { for (var id in msg.d) { presenceData[id] = msg.d[id]; updateUserNode(id, msg.d[id]); } }
-                if (msg.t === 'PRESENCE_UPDATE') { var uid = msg.d.discord_user?.id; if (uid) { presenceData[uid] = msg.d; updateUserNode(uid, msg.d); if (modal.classList.contains('active') && modal.dataset.activeId === uid) renderProfileModal(uid); } }
-            };
-            socket.onclose = () => setTimeout(connectLanyard, 5000);
-        }
-
-        splash.onclick = () => { splash.classList.add('hidden'); audio.src = 'https://file.garden/agB1wQeEOEJL_pWM/audio.mp3'; audio.volume = 0.2; audio.play(); playIcon.style.display = 'none'; pauseIcon.style.display = 'block'; };
-        mToggle.onclick = () => { if (audio.paused) { audio.play(); playIcon.style.display = 'none'; pauseIcon.style.display = 'block'; } else { audio.pause(); playIcon.style.display = 'block'; pauseIcon.style.display = 'none'; } };
-        vSlider.oninput = () => audio.volume = parseFloat(vSlider.value);
-        
-        // Modal logic only fires for click nodes that do not contain 'member-static-node' or 'bot-node'
-        document.querySelectorAll('.user-node').forEach(n => n.onclick = () => { 
-            if (n.classList.contains('bot-node') || n.classList.contains('member-static-node')) return; 
-            var id = n.dataset.discordid; 
-            if (id) { renderProfileModal(id); modal.style.display = 'flex'; setTimeout(() => modal.classList.add('active'), 10); } 
-        });
-        
-        document.querySelector('.modal-close').onclick = modal.onclick = (e) => { if (e.target === modal || e.target.className === 'modal-close') { modal.classList.remove('active'); setTimeout(() => modal.style.display = 'none', 350); } };
-
-        buildMemberMarquees(); buildAllyCards(); connectLanyard();
-    })();
-    </script>
-</body>
-</html>
+            var track2 = document
