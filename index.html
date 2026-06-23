@@ -112,9 +112,40 @@
         .avatar-wrap img:not(.decoration-img) { width: 65px; height: 65px; border-radius: 50%; border: 3px solid var(--status-offline); position: relative; z-index: 1; object-fit: cover; }
         .decoration-img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 125%; height: 125%; pointer-events: none; z-index: 2; }
 
-        #splash { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, transform 0.8s ease; cursor: pointer; }
-        #splash.hidden { opacity: 0; pointer-events: none; transform: scale(1.1); }
-        .enter-text { font-size: clamp(1.5rem, 5vw, 3rem); background: linear-gradient(90deg, #fff, var(--neon-blue), #fff); background-size: 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 3s infinite linear; cursor: pointer; }
+        /* ✅ AYOS NA SPLASH SCREEN - SIGURADONG PWEDE PINDUTIN */
+        #splash { 
+            position: fixed; 
+            inset: 0; 
+            background: #000; 
+            z-index: 10000; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            transition: opacity 0.5s ease, transform 0.5s ease; 
+            cursor: pointer; 
+            user-select: none;
+        }
+        #splash.hidden { 
+            opacity: 0; 
+            pointer-events: none; 
+            transform: scale(1.05); 
+        }
+        .enter-text { 
+            font-size: clamp(1.5rem, 5vw, 3rem); 
+            background: linear-gradient(90deg, #fff, var(--neon-blue), #fff); 
+            background-size: 200%; 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            animation: shine 3s infinite linear; 
+            cursor: pointer; 
+            margin-bottom: 15px;
+        }
+        .click-text {
+            color: #444;
+            font-size: 0.7rem;
+            cursor: pointer;
+        }
         @keyframes shine { to { background-position: 200% center; } }
 
         nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.6); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 20px 0; display: flex; justify-content: center; gap: 30px; }
@@ -234,9 +265,10 @@
         <p style="margin-top:20px; color:#888; text-transform:uppercase; letter-spacing:4px;">✦ hindi para sa tamad ✦</p>
     </div>
 
+    <!-- ✅ AYOS NA SPLASH SCREEN -->
     <div id="splash">
         <h1 class="enter-text">[ INITIALIZING PROTOCOL ]</h1>
-        <p style="margin-top: 15px; color: #444; font-size: 0.7rem;">CLICK TO ENTER</p>
+        <p class="click-text">CLICK TO ENTER</p>
     </div>
 
     <nav>
@@ -290,4 +322,171 @@
 
         <section id="bots">
             <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-pink);">[ SECURITY ]</h2>
-            <div class="grid-conta
+            <div class="grid-container" style="max-width: 400px; margin: 0 auto 40px;">
+                <div class="user-node bot-node" data-discordid="1494022976058691880">
+                    <div class="avatar-wrap"><img src="bot.jpg" alt="LhamaraX"></div>
+                    <h3>LhamaraX</h3>
+                    <p style="color: var(--neon-pink); font-size: 0.65rem; letter-spacing: 2px;">Anti-Raid</p>
+                    <div class="node-activities-list"></div>
+                    <div class="bot-scopes">
+                        <span class="bot-scope-tag">MOD</span>
+                        <span class="bot-scope-tag">SECURITY</span>
+                        <span class="bot-scope-tag">19 SERVER'S</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bot-card" id="bot-card">
+                <a class="bot-banner-link" href="#" target="_blank"><img src="banner2.gif" alt="Banner"></a>
+                <div class="bot-card-inner">
+                    <img class="bot-avatar" src="bot.jpg" id="bot-avatar-img" alt="Bot">
+                    <div class="bot-info">
+                        <h3>LhamaraX<span class="bot-tag">✓ Verified</span></h3>
+                        <p>Moderation, security & utility bot for the Server's ecosystem.</p>
+                        <p>Gambling Games..</p>
+                        <a class="bot-invite-btn" href="https://discord.com/oauth2/authorize?client_id=1494022976058691880&permissions=8&scope=bot" target="_blank">⟡ Invite Bot</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="allies">
+            <h2 style="text-align:center; margin-bottom: 10px; font-size: 0.9rem; color: var(--neon-blue);">[ SERVER'S ]</h2>
+            <div class="marquee-container"><div class="ally-track" id="allyTrack"></div></div>
+        </section>
+    </main>
+
+    <div id="profile-modal">
+        <div class="pro-card">
+            <span class="modal-close">×</span>
+            <div class="p-avatar-wrap" id="p-wrap"><img src="" class="p-avatar-main" id="m-img" alt="Profile"></div>
+            <h2 id="m-name" style="text-align:center;">User</h2>
+            <p class="p-status" id="m-status">Offline</p>
+            <div id="m-custom-msg" style="text-align:center; margin: 10px 0; color: #888;"></div>
+            <div id="m-badges" style="text-align:center;"></div>
+            <div id="activities-container"></div>
+            <div id="spotify-container"></div>
+        </div>
+    </div>
+
+    <div class="music-widget">
+        <button id="m-toggle" style="background:none; border:none; color:white; cursor:pointer;">
+            <svg id="play-icon" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+            <svg id="pause-icon" viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <div class="m-info"><span>Music</span><br><span style="font-size:0.6rem; color:#888;">NOW PLAYING</span></div>
+        <input type="range" id="v-slider" min="0" max="1" step="0.01" value="0.2">
+    </div>
+
+    <!-- ✅ AYOS NA AUDIO + BAGONG LINK -->
+    <audio id="bg-audio" loop preload="auto" crossorigin="anonymous">
+        <source src="https://mp3tourl.com/audio/1782186025499-ec47c26f-709f-4bd7-b613-8043c577d0e7.mp3" type="audio/mpeg">
+        <source src="https://cdn.filestackcontent.com/9xL0sX7QNqKq8vKfRr7g" type="audio/mpeg">
+        Your browser does not support the audio element.
+    
+
+    <!-- ✅ AYOS NA JAVASCRIPT - SIGURADONG GAGANA SA GITHUB PAGES -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        'use strict';
+
+        const allyServers = [
+            { name: "BLAH #ALBTHCKS", invite: "BAJ9UyFwFq ", guildId: "1504217597900755075", icon: "335c5d2498dbf8b0ab834b022710c86a", members: "2,541", status: "540 ONLINE" },
+        ];
+
+        const groupRow1 = [
+            { id: "1499079877389975673", name: "PJ", tag: "DESTROYER", type: "regular" },
+            { id: "901323764665573437", name: "ACKZ", tag: "NAKATAGO", type: "regular" },
+            { id: "1508001150962765964", name: "CLEMS", tag: "DESTROYER", type: "regular" },
+            { id: "1509144884211351672", name: "2kPing", tag: "NAKATAGO", type: "regular" },
+            { id: "1094262399785250926", name: "ZERO", tag: "NAKATAGO", type: "regular" }
+        ];
+
+        const groupRow2 = [
+            { id: "1501047743378886678", name: "YOZIR", tag: "DESTROYER", type: "regular" },
+            { id: "1383127548413743154", name: "KEN", tag: "NFNC", type: "regular" },
+            { id: "1471133660144078910", name: "VIN", tag: "ENEMY", type: "trial" },
+            { id: "1469367256273256632", name: "CCER", tag: "ENEMY", type: "trial" },
+            { id: "1467935676694532408", name: "ANGHELL", tag: "EXCLSV", type: "trial" }
+        ];
+
+        const splash = document.getElementById('splash');
+        const audio = document.getElementById('bg-audio');
+        const mToggle = document.getElementById('m-toggle');
+        const vSlider = document.getElementById('v-slider');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+
+        // ✅ SIGURADONG PINDUTIN ANG SPLASH SCREEN
+        function enterSite() {
+            splash.classList.add('hidden');
+            audio.volume = vSlider.value;
+            audio.play().catch(err => console.log("Audio play error:", err));
+        }
+
+        splash.addEventListener('click', enterSite);
+        splash.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            enterSite();
+        });
+
+        // Audio controls
+        mToggle.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'inline';
+            } else {
+                audio.pause();
+                playIcon.style.display = 'inline';
+                pauseIcon.style.display = 'none';
+            }
+        });
+
+        vSlider.addEventListener('input', function() {
+            audio.volume = vSlider.value;
+        });
+
+        // Build marquees
+        function escapeHtml(s) {
+            const div = document.createElement('div');
+            div.textContent = s;
+            return div.innerHTML;
+        }
+
+        function buildMemberNode(m) {
+            return `<div class="user-node member-static-node" data-id="${m.id}">
+                <div class="avatar-wrap"><img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="${m.name}"></div>
+                <h3>${escapeHtml(m.name)}</h3>
+                <span class="member-role-tag ${m.type}">${escapeHtml(m.tag)}</span>
+            </div>`;
+        }
+
+        function buildMarquees() {
+            const t1 = document.getElementById('memberTrack1');
+            const t2 = document.getElementById('memberTrack2');
+            const tA = document.getElementById('allyTrack');
+            if (!t1 || !t2 || !tA) return;
+
+            t1.innerHTML = groupRow1.map(buildMemberNode).join('') + groupRow1.map(buildMemberNode).join('');
+            t2.innerHTML = groupRow2.map(buildMemberNode).join('') + groupRow2.map(buildMemberNode).join('');
+
+            tA.innerHTML = allyServers.map(a => 
+                `<a href="https://discord.gg/${a.invite.trim()}" target="_blank" class="ally-card">
+                    <div class="ally-icon-wrap"><img src="https://cdn.discordapp.com/icons/${a.guildId}/${a.icon}.png?size=64"></div>
+                    <div><div class="ally-name">${escapeHtml(a.name)}</div><div class="ally-stats-small"><span class="status-dot"></span> ${a.status} • ${a.members}</div></div>
+                </a>`
+            ).join('') + allyServers.map(a => 
+                `<a href="https://discord.gg/${a.invite.trim()}" target="_blank" class="ally-card">
+                    <div class="ally-icon-wrap"><img src="https://cdn.discordapp.com/icons/${a.guildId}/${a.icon}.png?size=64"></div>
+                    <div><div class="ally-name">${escapeHtml(a.name)}</div><div class="ally-stats-small"><span class="status-dot"></span> ${a.status} • ${a.members}</div></div>
+                </a>`
+            ).join('');
+        }
+
+        buildMarquees();
+    });
+    </script>
+
+</body>
+</html>
