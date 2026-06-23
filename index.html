@@ -72,19 +72,24 @@
             background: #222;
         }
 
+        /* Splash Screen Fixed */
         #splash { 
             position: fixed; 
             inset: 0; 
             background: #000; 
-            z-index: 10000; 
+            z-index: 9999; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             justify-content: center; 
-            transition: opacity 0.5s ease; 
+            transition: opacity 0.4s ease, visibility 0.4s ease; 
             cursor: pointer; 
         }
-        #splash.hidden { opacity: 0; pointer-events: none; }
+        #splash.hidden { 
+            opacity: 0; 
+            visibility: hidden; 
+            pointer-events: none; 
+        }
         .enter-text { 
             font-size: clamp(1.5rem, 5vw, 3rem); 
             background: linear-gradient(90deg, #fff, var(--neon-blue), #fff); 
@@ -94,7 +99,7 @@
             animation: shine 3s infinite linear; 
             margin-bottom: 15px;
         }
-        .click-text { color: #444; font-size: 0.7rem; }
+        .click-text { color: #444; font-size: 0.9rem; }
         @keyframes shine { to { background-position: 200% center; } }
 
         nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.6); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 20px 0; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
@@ -165,13 +170,13 @@
             <h1 class="title" style="font-size: clamp(2rem, 8vw, 4rem);">NO FACE NO CASE</h1>
         </header>
 
-        <!-- FOUNDER - BLAH NEW AVATAR -->
+        <!-- FOUNDER - BLAH -->
         <section id="founder">
             <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-pink);">[ FOUNDER ]</h2>
             <div style="display: flex; justify-content: center;">
                 <div class="user-node">
                     <div class="avatar-wrap">
-                        <img src="https://i.ibb.co/9gY7kq7/blah-new.jpg" alt="BLAH">
+                        <img src="https://i.ibb.co/7yXgFzR/blah-avatar.png" alt="BLAH" loading="lazy">
                     </div>
                     <h3>BLAH</h3>
                     <p style="color: var(--neon-pink); font-size: 0.7rem; font-weight: bold;">FOUNDER</p>
@@ -184,31 +189,31 @@
             <h2 style="text-align:center; margin-bottom: 30px; font-size: 0.9rem; color: var(--neon-blue);">[ DAY ONE'S ]</h2>
             <div class="grid-container">
                 <div class="user-node">
-                    <div class="avatar-wrap"><img src="https://i.ibb.co/8YxJq8f/esh.jpg" alt="ESH"></div>
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/41jKX5f/esh-avatar.png" alt="ESH" loading="lazy"></div>
                     <h3>ESH</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">1OF1</p>
                 </div>
                 <div class="user-node">
-                    <div class="avatar-wrap"><img src="https://i.ibb.co/7JnK9vY/pnk.jpg" alt="PNK"></div>
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/6bH0tY5/pnk-avatar.png" alt="PNK" loading="lazy"></div>
                     <h3>PNK</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">----</p>
                 </div>
                 <div class="user-node">
-                    <div class="avatar-wrap"><img src="https://i.ibb.co/3FhGq5m/moozie.jpg" alt="MOOZIE"></div>
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/3c0Qr3j/moozie-avatar.png" alt="MOOZIE" loading="lazy"></div>
                     <h3>MOOZIE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">----</p>
                 </div>
                 <div class="user-node">
-                    <div class="avatar-wrap"><img src="https://i.ibb.co/2ZxK9vY/prince.jpg" alt="PRINCE"></div>
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/7gV7j7R/prince-avatar.png" alt="PRINCE" loading="lazy"></div>
                     <h3>PRINCE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">HANDLER</p>
                 </div>
                 <div class="user-node">
-                    <div class="avatar-wrap"><img src="https://i.ibb.co/5GzX9vY/ezee.jpg" alt="EZEE"></div>
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/LRvF0rZ/ezee-avatar.png" alt="EZEE" loading="lazy"></div>
                     <h3>EZEE</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">HANDLER</p>
                 </div>
                 <div class="user-node">
-                    <div class="avatar-wrap"><img src="https://i.ibb.co/4YxJq8f/jeremy.jpg" alt="JEREMY"></div>
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/3z8X7qG/jeremy-avatar.png" alt="JEREMY" loading="lazy"></div>
                     <h3>JEREMY</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">Roster Admin</p>
                 </div>
                 <div class="user-node">
-                    <div class="avatar-wrap"><img src="https://i.ibb.co/6JnK9vY/nio.jpg" alt="NIO"></div>
+                    <div class="avatar-wrap"><img src="https://i.ibb.co/9s2Kp9r/nio-avatar.png" alt="NIO" loading="lazy"></div>
                     <h3>NIO</h3><p style="color: var(--neon-blue); font-size: 0.65rem;">Roster Admin</p>
                 </div>
             </div>
@@ -262,9 +267,10 @@
         <input type="range" id="volume" min="0" max="1" step="0.01" value="0.2" style="width:80px;">
     </div>
 
-    <!-- NEW BACKGROUND MUSIC -->
-    <audio id="bg-audio" loop preload="auto" crossorigin="anonymous">
+    <!-- Background Music Fixed -->
+    <audio id="bg-audio" loop preload="metadata" crossorigin="anonymous">
         <source src="https://mp3tourl.com/audio/1782186025499-ec47c26f-709f-4bd7-b613-8043c577d0e7.mp3" type="audio/mpeg">
+        <source src="https://cdn.freesound.org/previews/630/630990_13602288-lq.mp3" type="audio/mpeg">
     
 
     <script>
@@ -276,14 +282,17 @@
         const playIcon = document.getElementById('play-icon');
         const pauseIcon = document.getElementById('pause-icon');
 
+        // Fix splash screen not hiding
         function enterSite() {
             splash.classList.add('hidden');
             audio.volume = volumeSlider.value;
-            audio.play().catch(() => console.log('Click play button to start sound'));
+            audio.play().catch(err => console.log("Sound will play when you click the button:", err));
         }
+
         splash.addEventListener('click', enterSite);
         splash.addEventListener('touchend', e => { e.preventDefault(); enterSite(); });
 
+        // Music controls
         mToggle.addEventListener('click', () => {
             if (audio.paused) { 
                 audio.play(); 
@@ -297,27 +306,27 @@
         });
         volumeSlider.addEventListener('input', () => audio.volume = volumeSlider.value);
 
-        // ALL MEMBERS WITH UPDATED AVATARS
+        // Members list with avatars
         const membersRow1 = [
-            {img:"https://i.ibb.co/7JnK9vY/pj.jpg", name:"PJ", tag:"DESTROYER", type:"regular"},
-            {img:"https://i.ibb.co/2ZxK9vY/ackz.jpg", name:"ACKZ", tag:"NAKATAGO", type:"regular"},
-            {img:"https://i.ibb.co/5GzX9vY/clems.jpg", name:"CLEMS", tag:"DESTROYER", type:"regular"},
-            {img:"https://i.ibb.co/4YxJq8f/2kping.jpg", name:"2kPing", tag:"NAKATAGO", type:"regular"},
-            {img:"https://i.ibb.co/6JnK9vY/zero.jpg", name:"ZERO", tag:"NAKATAGO", type:"regular"}
+            {img:"https://i.ibb.co/4Yj7vQK/pj-avatar.png", name:"PJ", tag:"DESTROYER", type:"regular"},
+            {img:"https://i.ibb.co/8Y7xGzR/ackz-avatar.png", name:"ACKZ", tag:"NAKATAGO", type:"regular"},
+            {img:"https://i.ibb.co/LRvF0rZ/clems-avatar.png", name:"CLEMS", tag:"DESTROYER", type:"regular"},
+            {img:"https://i.ibb.co/3z8X7qG/2kping-avatar.png", name:"2kPing", tag:"NAKATAGO", type:"regular"},
+            {img:"https://i.ibb.co/9s2Kp9r/zero-avatar.png", name:"ZERO", tag:"NAKATAGO", type:"regular"}
         ];
         const membersRow2 = [
-            {img:"https://i.ibb.co/9gY7kq7/yozir.jpg", name:"YOZIR", tag:"DESTROYER", type:"regular"},
-            {img:"https://i.ibb.co/8YxJq8f/ken.jpg", name:"KEN", tag:"NFNC", type:"regular"},
-            {img:"https://i.ibb.co/3FhGq5m/vin.jpg", name:"VIN", tag:"ENEMY", type:"trial"},
-            {img:"https://i.ibb.co/7JnK9vY/ccer.jpg", name:"CCER", tag:"ENEMY", type:"trial"},
-            {img:"https://i.ibb.co/2ZxK9vY/anghell.jpg", name:"ANGHELL", tag:"EXCLSV", type:"trial"}
+            {img:"https://i.ibb.co/7yXgFzR/yozir-avatar.png", name:"YOZIR", tag:"DESTROYER", type:"regular"},
+            {img:"https://i.ibb.co/41jKX5f/ken-avatar.png", name:"KEN", tag:"NFNC", type:"regular"},
+            {img:"https://i.ibb.co/6bH0tY5/vin-avatar.png", name:"VIN", tag:"ENEMY", type:"trial"},
+            {img:"https://i.ibb.co/3c0Qr3j/ccer-avatar.png", name:"CCER", tag:"ENEMY", type:"trial"},
+            {img:"https://i.ibb.co/7gV7j7R/anghell-avatar.png", name:"ANGHELL", tag:"EXCLSV", type:"trial"}
         ];
 
         function buildNode(m) {
             return `
             <div class="user-node">
                 <div class="avatar-wrap">
-                    <img src="${m.img}" alt="${m.name}">
+                    <img src="${m.img}" alt="${m.name}" loading="lazy">
                 </div>
                 <h3>${m.name}</h3>
                 <span class="member-role-tag ${m.type}">${m.tag}</span>
